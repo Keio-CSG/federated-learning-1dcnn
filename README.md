@@ -83,10 +83,10 @@ python client.py client1(ファイル名)
 - サーバー、各クライアントそれぞれ別のターミナルで実行
 
 ## データ前処理
-・正規化: Z-score 各軸ごと
-・パディング: 200 時系列長に揃える
-・バッチ作成: DataLoader で shuffle=True（学習）、shuffle=False（検証）
-・ラベル: pos → 1, neg → 0
+- 正規化: Z-score 各軸ごと
+- パディング: 200 時系列長に揃える
+- バッチ作成: DataLoader で shuffle=True（学習）、shuffle=False（検証）
+- ラベル: pos → 1, neg → 0
 
 ## 学習設定
 
