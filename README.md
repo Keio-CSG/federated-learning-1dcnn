@@ -47,14 +47,19 @@ pip install rosbags opencv-python
 ## モデル構成
 
 ### CNNBinaryClassifier
+- **モデル名**: CNNBinaryClassifier (1D CNN)
 - **入力チャンネル**: 3（加速度・角速度の3軸）
 - **ベースチャンネル**: 32
-- **アーキテクチャ**:
-  - Stem: 初期畳み込み層
-  - Stage1: プーリング + 畳み込み + 残差ブロック
-  - Stage2: プーリング + 畳み込み + 残差ブロック
-  - グローバル平均・最大プーリング
-  - 全結合層（ドロップアウト付き）
+- **構造**:
+  - conv1: Conv1d, 入力チャネル=3, 出力チャネル=16, kernel=5, padding=2
+  - bn1: BatchNorm1d(16)
+  - conv2: Conv1d, 入力チャネル=16, 出力チャネル=32, kernel=5, padding=2
+  - bn2: BatchNorm1d(32)
+  - fc1: Linear(32 * 200 → 64)
+  - fc2: Linear(64 → 2)
+- **活性化関数**: ReLU
+- **Flatten**: 全結合層の前に1次元に展開
+- **出力**: 2クラス（二値分類）
 
 
 ## 使用方法
