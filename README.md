@@ -61,6 +61,7 @@ pip install rosbags opencv-python
 
 ### 1. データの配分
 正例データと負例データを分けて配置しコードを実行、クライアント数と配置したパスを指定
+
 dateディレクトリ以下にランダムかつ均等に分配される
 ```bash
 python split_npy_to_clients.py
