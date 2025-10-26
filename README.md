@@ -18,12 +18,13 @@ fl_imu/
 ├── split_npy_to_clients.py     #データ分配
 ├── data/                       # 学習データ
 │    ├──client1/                
-│        ├── pos/　　　　　　　　　#正例データ
-│        │   ├── imu_1.npy
-│        │   └── imu_2.npy
-│        └── neg/　　　　　　　　　#負例データ
-│            ├── imu_3.npy
-│            └── imu_4.npy
+│    │    ├── pos/　　　　　　　　　#正例データ
+│    │    │   ├── imu_1.npy
+│    │    │   └── imu_2.npy
+│    │    └── neg/　　　　　　　　　#負例データ
+│    │        ├── imu_3.npy
+│    │        └── imu_4.npy
+│    ├──client2/ 
 ```
 
 ## 必要なパッケージ
