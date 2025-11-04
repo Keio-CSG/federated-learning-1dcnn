@@ -18,8 +18,8 @@ def weighted_average(metrics):
 # サーバーの戦略（Federated Averaging）設定
 # -----------------------------
 strategy = fl.server.strategy.FedAvg(
-    min_fit_clients=9,       # 1ラウンドで学習に参加する最小クライアント数
-    min_available_clients=9, # サーバー起動時に必要なクライアント数
+    min_fit_clients=5,       # 1ラウンドで学習に参加する最小クライアント数
+    min_available_clients=18, # サーバー起動時に必要なクライアント数
     evaluate_metrics_aggregation_fn=weighted_average
 )
 

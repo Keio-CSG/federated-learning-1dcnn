@@ -43,8 +43,8 @@ train_idx, val_idx = train_test_split(
 )
 
 
-train_loader = DataLoader(torch.utils.data.Subset(dataset, train_idx), batch_size=16, shuffle=True)
-val_loader = DataLoader(torch.utils.data.Subset(dataset, val_idx), batch_size=16, shuffle=False)
+train_loader = DataLoader(torch.utils.data.Subset(dataset, train_idx), batch_size=8, shuffle=True)
+val_loader = DataLoader(torch.utils.data.Subset(dataset, val_idx), batch_size=8, shuffle=False)
 
 # -----------------------------
 # 損失関数と最適化手法
@@ -96,7 +96,7 @@ class FLClient(fl.client.NumPyClient):
     # ローカル学習
     def fit(self, params, config):
         self.set_parameters(params)
-        local_epochs = 2  # ラウンドごとのローカル学習エポック数
+        local_epochs = 1  # ラウンドごとのローカル学習エポック数
         for _ in range(local_epochs):
             train_one_epoch()
         return self.get_parameters(config={}), len(train_loader.dataset), {}
