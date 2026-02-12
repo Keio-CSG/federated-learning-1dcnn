@@ -76,20 +76,11 @@ dateディレクトリ以下にランダムかつ均等に分配される
 python split_npy_to_clients.py
 ```
 
-### 2. サーバの起動
+### 2. proxyデータを用いた勾配作成
 
-```bash
-python server.py
-```
 
-### 3. クライアントの起動
+### 3. モデル学習
 
-```bash
-python client.py client1(ファイル名)
-```
-- ローカルエポック数 client.py 内で変更
-- ラウンド数、クライアント数server.py内で変更
-- サーバー、各クライアントそれぞれ別のターミナルで実行
 
 ## データ前処理
 - 正規化: Z-score 各軸ごと
