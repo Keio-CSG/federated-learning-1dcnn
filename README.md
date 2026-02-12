@@ -36,9 +36,9 @@ pip install scikit-learn
 pip install flwr                       
 pip install matplotlib                 
 pip install rosbags opencv-python
-!pip install -U "flwr[simulation]"
-!pip install torch torchvision torchaudio
-!pip install numpy     
+pip install -U "flwr[simulation]"
+pip install torch torchvision torchaudio
+pip install numpy     
 ```
 
 ## データ形式
