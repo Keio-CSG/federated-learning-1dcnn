@@ -85,8 +85,10 @@ dateディレクトリ以下にランダムかつ均等に分配される
 
 ### 3. モデル学習の準備
 simulationgradFedRE.pyの
+```bash
 G0_PATH = "g0_fc2weight.npy"
 G1_PATH = "g1_fc2weight.npy"
+```
 を2で作成したg0.npy/g1.npy のパスに書き換える
 またlast_layer_index=17にする
 
