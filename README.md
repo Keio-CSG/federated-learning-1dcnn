@@ -12,10 +12,15 @@ IMUセンサデータを用いた連合学習実験コード
 
 ```
 fl_imu/
-├── server.py                   # Flowerサーバ
-├── client.py                   #クライアント
+├── server.py                   #Flowerサーバ
+├── client.py                   #Flowerクライアント
 ├── train_1dcnn.py              #モデル定義 & 学習関数
 ├── split_npy_to_clients.py     #データ分配
+├── computeg0g1.py              #勾配作成関数
+├── simulationFedAvg.py         #FedAvg
+├── simulationgradFedRE.py      #gradFL
+├── neg                         #負例データ
+├── pos                         #正例データ
 ├── data/                       # 学習データ
 │    ├──client1/                
 │    │    ├── pos/　　　　　　　　　#正例データ
