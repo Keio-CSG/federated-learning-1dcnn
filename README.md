@@ -28,7 +28,7 @@ fl_imu/
 ```
 
 ## 必要なパッケージ
-以下のパッケージを先にインストールする。
+以下のパッケージを先にインストールする
 ```bash
 pip install torch torchvision          
 pip install numpy                      
@@ -69,7 +69,7 @@ pip install numpy
 ## 使用方法
 
 ### 1. データの配分
-正例データと負例データを分けて配置しコードを実行、クライアント数と配置したパスを指定
+正例データと負例データを分けて配置しコードを実行、クライアント数とposデータ、negデータのパスを指定
 
 dateディレクトリ以下にランダムかつ均等に分配される
 ```bash
@@ -77,16 +77,26 @@ python split_npy_to_clients.py
 ```
 
 ### 2. proxyデータを用いた勾配作成
-!python /content/fl_imu_projectgradRE/computeg0g1.pyを実行するとg0.npy / g1.npy が保存される
+python fl_imu_projectgradRE/computeg0g1.pyを実行するとg0.npy/g1.npy が保存される
 
 
 
-### 3. モデル学習
+### 3. モデル学習の準備
 simulationgradFedRE.pyの
 G0_PATH = "g0_fc2weight.npy"
 G1_PATH = "g1_fc2weight.npy"
-を作成したg0.npy / g1.npy のパスに書き換える。
+を2で作成したg0.npy/g1.npy のパスに書き換える。
 またlast_layer_index=17にする。
+
+### 4. モデル学習の実行
+simulationFedAvg.py、simulationgradFedRE.pyの
+NUM_CLIENTS、NUM_ROUNDS、BATCH_SIZE、LOCAL_EPOCHSを設定する
+(例：NUM_CLIENTS = 10、NUM_ROUNDS = 15
+BATCH_SIZE = 16、LOCAL_EPOCHS = 2)
+
+python fl_imu_projectgradRE/simulationFedAvg.pyで通常の連合学習の学習を実行
+
+python fl_imu_projectgradRE/simulationgradFedRE.pyで重み付きありの連合学習を実行
 
 
 ## データ前処理
