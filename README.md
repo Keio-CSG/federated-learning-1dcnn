@@ -28,7 +28,7 @@ fl_imu/
 ```
 
 ## 必要なパッケージ
-
+以下のパッケージを先にインストールする。
 ```bash
 pip install torch torchvision          
 pip install numpy                      
@@ -77,9 +77,16 @@ python split_npy_to_clients.py
 ```
 
 ### 2. proxyデータを用いた勾配作成
+!python /content/fl_imu_projectgradRE/computeg0g1.pyを実行するとg0.npy / g1.npy が保存される
+
 
 
 ### 3. モデル学習
+simulationgradFedRE.pyの
+G0_PATH = "g0_fc2weight.npy"
+G1_PATH = "g1_fc2weight.npy"
+を作成したg0.npy / g1.npy のパスに書き換える。
+またlast_layer_index=17にする。
 
 
 ## データ前処理
