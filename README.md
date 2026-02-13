@@ -77,11 +77,11 @@ dateディレクトリ以下にランダムかつ均等に分配される
 ```
 
 ### 2. proxyデータを用いた勾配作成
+以下のコードを実行するとg0.npy/g1.npy が保存される
+```bash
 %cd fl_imu_projectgradRE
 !python computeg0g1.py
-を実行するとg0.npy/g1.npy が保存される
-
-
+```
 
 ### 3. モデル学習の準備
 simulationgradFedRE.pyの
@@ -96,13 +96,18 @@ NUM_CLIENTS、NUM_ROUNDS、BATCH_SIZE、LOCAL_EPOCHSを設定する
 (例：NUM_CLIENTS = 10、NUM_ROUNDS = 15
 BATCH_SIZE = 16、LOCAL_EPOCHS = 2)
 
+以下のコードで通常の連合学習の学習を実行
+```bash
 %cd fl_imu_projectgradRE
 !python simulationFedAvg.py
-で通常の連合学習の学習を実行
+```
 
+以下のコードで重み付きありの連合学習を実行
+```bash
 %cd fl_imu_projectgradRE
 !python simulationgradFedRE.py
-で重み付きありの連合学習を実行
+```
+
 
 
 ## データ前処理
